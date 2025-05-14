@@ -1,15 +1,24 @@
 :root {
-  --primary-color: ;
-  --secondary-color: ;
-  --background-color: ;
+  --primary-color: #050510;
+  --secondary-color: white;
+  --background-color: #010118;
   --font-size: ;
-  --font-color: ;
+  --font-color: white;
   --heading-font: ;
   --body-font: ;
   --spacing: ;
   --default-padding: ;
-  --default-border-radius: ;
-  --p-size: ;
-  --h2-size: ;
+  --default-border-radius: 15px;
+  --default-box-shadow: 0 0 15px 1px;
+  --p-size: 20px;
+  --h2-size: 24px;
   --img-size: ;
+
+  
+}
+
+.flex-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
