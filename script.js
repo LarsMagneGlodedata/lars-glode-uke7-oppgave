@@ -2,15 +2,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   let isNavOpen = false;
   const burger = document.querySelector('.burger');
-  const navMenu = document.querySelector('.navMenu');
+  const navMenu = document.querySelector('#headerNav');
   const main = document.querySelector('main');
   const overlay = document.querySelector('.overlay');
+  let mainHeight = document.querySelector("main").offsetHeight
   // const push = document.querySelector(".pushdown")
 
   // function for å åpne nav
   function openNav() {
     navMenu.style.height = '193px';
-    overlay.style.height = '450%';
+    overlay.style.height = `${mainHeight + 193}px`;
     burger.classList.toggle('change');
     // push.style.height = "271px"
     if (navMenu) navMenu.style.height === '193px';
@@ -78,47 +79,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  let dataText = ['Hei, dette er en test!', 'Testen er fullført...!'];
-  let hero = document.querySelector('.heroP');
+document.addEventListener('DOMContentLoaded', function(event) {
+  let dataText = ["Svett", "Svær", "Sexy", "Grand Marshal"];
+  let prefix = ["<span class='prefix-style'>Bjørn E:</span>"]
+  let heroP = document.querySelector(".heroP");
 
-  function typewriter(text, i, callback) {
-    if (i < text.length) {
-      hero.innerHTML =
-        text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-      setTimeout(function () {
-        typewriter(text, i + 1, callback);
-      }, 50);
-    } else if (typeof callback == 'function') {
-      setTimeout(callback, 2000);
-    }
+  function typeWriter(text, i, Callback) {
+      if (i < text.length) {
+          heroP.innerHTML = prefix + text.substring(0, i + 1) + '<span class="caret" aria-hidden="true"></span>';
+          setTimeout(function() {
+              typeWriter(text, i + 1, Callback);
+          }, 100);
+      } else if (typeof Callback == 'function') {
+          setTimeout(Callback, 2000);
+      }
   }
 
-  function deleteText(text, i, callback) {
-    if (i >= !text.length) {
-      hero.innerHTML =
-        text.substring(0, i) + '<span aria-hidden="true"></span>';
-      setTimeout(function () {
-        deleteText(text, i - 1, callback);
-      }, 20);
-    } else if (typeof callback == 'function') {
-      setTimeout(callback, 500);
-    }
+  function deleteText(text, i, Callback) {
+      if (i >= !text.length) {
+          heroP.innerHTML = prefix + text.substring(0, i) + '<span class="caret" aria-hidden="true"></span>';
+          setTimeout(function() {
+              deleteText(text, i - 1, Callback);
+          }, 30);
+      } else if (typeof Callback == 'function') {
+          setTimeout(Callback, 1000);
+      }
   }
 
-  function startAnimation(i) {
-    if (i < dataText.length) {
-      typewriter(dataText[i], 0, function () {
-        deleteText(dataText[i], dataText[i].length, function () {
-          startAnimation(i + 1);
-        });
-      });
-    } else {
-      setTimeout(function () {
-        startAnimation(0);
-      }, 3000);
-    }
+  function startTextAnimation(i) {
+      if (i < dataText.length) {
+          typeWriter(dataText[i], 0, function() {
+              deleteText(dataText[i], dataText[i].length, function() {
+                  startTextAnimation(i + 1);
+              });
+          });
+      } else {
+          setTimeout(function() {
+              startTextAnimation(0);
+          }, 1);
+      }
   }
 
-  startAnimation(0);
+  startTextAnimation(0);
 });
+
+/*
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.createElement('button')
+  const section = document.querySelector('.about')
+  
+  button.textContent = "Klikk meg!"
+  button.classList.add("btn-style")
+  section.appendChild(button)
+  
+  button.style.backgroundColor = "cyan"
+  button.style.fontSize = "26px"
+  button.style.color = "red"
+  button.style.padding = "30px"
+  button.style.boxShadow = "0 0 15px 1px white"
+  button.style.borderRadius = "15px"
+  button.style.border = "5px solid black"
+  button.style.transition = "0.5s"
+
+    button.addEventListener("mouseover", () => {
+      button.style.scale = "2"
+    })
+
+    button.addEventListener("mouseout", () => {
+      button.style.scale = "1"
+    })
+})
+*/

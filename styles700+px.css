@@ -34,5 +34,5 @@ header {
 }
 
 .navMenu a:hover {
-  background-color: #414141;
+  background-color: var(--secondary-color);
 }

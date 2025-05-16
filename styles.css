@@ -14,9 +14,6 @@ body {
   transition: 0.4s;
 }
 
-section {
-  height: 100vh;
-}
 
 nav {
   display: flex;
@@ -30,6 +27,7 @@ nav {
 
 .navMenu {
   align-items: center;
+  border-radius: 5px;
 }
 
 .nav1 p {
@@ -49,22 +47,11 @@ h1 {
   color: var(--font-color);
 }
 
-.hero {
-  display: flex;
-  justify-content: space-around;
-  align-content: start;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  row-gap: 10vh;
-}
 
 .heroH2 {
   color: var(--font-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10%;
-  width: 33%;
+  height: var(--default-height);
+  width: var(--default-width);
   font-size: var(--h2-size);
   background-color: var(--primary-color);
   border-radius: var(--default-border-radius);
@@ -72,32 +59,34 @@ h1 {
 }
 
 .heroP {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: var(--default-border-radius);
   box-shadow: var(--default-box-shadow);
-  height: 10%;
-  width: 33%;
+  height: var(--default-height);
+  width: var(--default-width);
   background-color: var(--primary-color);
   font-size: var(--p-size);
   text-transform: capitalize;
   color: var(--font-color);
+  padding: var(--default-padding);
+}
+
+.prefix-style {
+  color: var(--font-color);
+  margin-right: var(--default-margin);
 }
 
 .heroImg {
-  display: flex;
-  justify-content: center;
   width: 50%;
-  height: auto;
+  height: 50%;
   color: var(--font-color);
   border-radius: var(--default-border-radius);
   box-shadow: var(--default-box-shadow);
+  background-color: var(--primary-color);
 }
 
-span {
+.caret {
   font-size: 1em;
-  border-right: 0.05em solid;
+  border-right: 0.05em solid white;
   animation: caret 1s steps(1) infinite;
 }
 
@@ -107,10 +96,48 @@ span {
   }
 }
 
+.aboutH2 {
+  color: var(--font-color);
+  height: var(--default-height);
+  width: var(--default-width);
+  font-size: var(--h2-size);
+  background-color: var(--primary-color);
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--default-box-shadow);
+  margin: var(--default-margin);
+}
+
+.aboutP {
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--default-box-shadow);
+  height: auto;
+  width: 50%;
+  background-color: var(--primary-color);
+  font-size: var(--p-size);
+  color: var(--font-color);
+  padding: var(--default-padding);
+}
+
+.aboutImg {
+  width: var(--default-width);
+  height: var(--default-height);
+  color: var(--font-color);
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--default-box-shadow);
+  background-color: var(--primary-color);
+  margin: var(--default-margin);
+}
+
 button {
   color: black;
 }
 
 footer {
   padding: 1rem;
+  background-color: var(--primary-color);
 }
+
+h3 {
+  color: var(--font-color);
+}
+

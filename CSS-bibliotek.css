@@ -1,19 +1,21 @@
 :root {
   --primary-color: #050510;
-  --secondary-color: white;
-  --background-color: #010118;
-  --font-size: ;
+  --secondary-color: #111130;
+  --background-color: #000000;
   --font-color: white;
   --heading-font: ;
-  --body-font: ;
   --spacing: ;
-  --default-padding: ;
+  --default-padding: 10px;
+  --default-margin: 10px;
   --default-border-radius: 15px;
-  --default-box-shadow: 0 0 15px 1px;
+  --default-box-shadow: 0 0 5px 1px var(--secondary-color);
   --p-size: 20px;
+  --h1-size: 26px;
   --h2-size: 24px;
+  --h3-size: 20px;
   --img-size: ;
-
+  --default-width: 33%;
+  --default-height: 10%;
   
 }
 
@@ -22,3 +24,27 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (min-width: 700px) {
+  section {
+    display: flex;
+    justify-content: space-around;
+    align-content: start;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 10vh;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10vh;
+    height: 100vh;
+  }
+}
+

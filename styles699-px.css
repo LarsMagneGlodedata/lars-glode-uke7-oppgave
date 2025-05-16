@@ -18,7 +18,7 @@ nav {
 
 
 .burger {
-  background-color: #333333;
+  background-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -45,11 +45,15 @@ nav {
 }
 
 .navMenu {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   padding: 0 5vw;
   transition: 0.5s;
   overflow: hidden;
+}
+
+#headerNav {
   height: 0;
 }
 
@@ -74,4 +78,17 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: 0.5s ease-in-out;
+}
+
+.heroP {
+  flex-direction: column;
+}
+
+#footerNav {
+  justify-content: center;
+  align-items: center;
+}
+
+#footerNav a {
+  width: min-content;
 }
